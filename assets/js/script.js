@@ -22,6 +22,7 @@ function getMovie() {
             .then(function (data) {
                 displayMovieInfo(data);
                 console.log(data);
+                saveSearch(movie);
             })
     }
 }
@@ -42,7 +43,7 @@ function displayMovieInfo(data) {
         var year = document.createElement('p');
         year.textContent = `Year: ${data.Year}`;
         var director = document.createElement('p');
-        director.textContent = `Director ${data.Director}`;
+        director.textContent = `Director: ${data.Director}`;
         var genre = document.createElement('p');
         genre.textContent = `Genre: ${data.Genre}`;
         resultBox.appendChild(title);
@@ -71,7 +72,7 @@ function getSoundtrack() {
     }
 }
 
-//function to display youtube links from movie
+//function to display youtube links for movies
 function displayVideoResults(videos) {
 
     //Creates a container div with corresponding class in css of .result-box to create a white box for the text to display in
@@ -96,3 +97,44 @@ function displayVideoResults(videos) {
         });
     }
 }
+
+
+
+
+//Loads search history from local storage or creates an array if no history exists
+var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+
+
+//function to save the search to local storage, check if the movie is already in search history, and limits list to 5 movies at a time & saves to local storage
+function saveSearch(userInput) {
+    if (!searchHistory.includes(userInput)) {
+        searchHistory.push(userInput);
+        if (searchHistory.length > 5) {
+            searchHistory.shift();
+        }
+        localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+    }
+}
+
+//function to display search history as a list with clickable buttons to search again
+function displaySearchHistory() {
+    var historyContainer = document.getElementById('search-history-list');
+    historyContainer.innerHTML = '';
+
+    //Creates a button for each item in the search history & when you click the button, it re-searches for that movie
+    searchHistory.forEach(function (item) {
+        var button = document.createElement('button');
+        button.textContent = item;
+        button.classList.add('search-history-button');
+        button.addEventListener('click', function () {
+            movieInput.value = item;
+            getMovie();
+            getSoundtrack();
+        });
+
+        historyContainer.appendChild(button);
+    });
+}
+
+displaySearchHistory();
