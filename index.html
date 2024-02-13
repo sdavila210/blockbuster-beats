@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blockbuster Beats!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="styles.debug.css"> -->
+    <script defer src="https://use.fontawesome.com/release/v5.07/js/all/js"></script>
+  </head>
+  <body>
+  </body>
+</html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockbuster Beats</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    
 </head>
 
 <body>
-
     <header>
-        <h1>Blockbuster Beats</h1>
+        <div class="containers">
+            <img src="./assets/images/bblogo.jpeg" class="hello">      
+        </div>        
     </header>
 
     <nav>
@@ -22,15 +35,39 @@
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
-
-    <main>
-        <h2>Welcome to BLOCKBUSTER BEATS</h2>
-        <p> Here you will find the soundtracks and beats to all of your favorite movies</p>
-        <div class="search-container">
-            <input type="text" id="search-bar" placeholder="Search for your favorite film...">
-            <button id="search-button">Search</button>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-two-fifths">
+                    <div class="notification is-warning">
+                        <p class="is-size-5">
+                        Welcome to BLOCKBUSTER BEATS 
+                        </p>
+                    </div>
+                    <div class="notification is-warning">
+                        <p class="is-size-4">
+                        Here you will find the soundtracks and beats to all of your favorite movies! 
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+    <section class="section">
+        <div class="container">
+        </div>
+        <form class="box">
+            <div class="field">
+                <div class="column is-full"></div>
+                        <label class="label">Search for your favorite film...</label>
+                    <div class="control">
+                        <input class="input" type="Search for your favorite film..." placeholder="e.g. Titanic, Ghostbusters, Sonic the Hedgehog">
+                    </div>
+                </div>
+            </div>
+                   <button class="button is-link">Search Film</button>
+          </form>
+      </section>
 
     <script src="./assets/js/script.js"></script>
 </body>
