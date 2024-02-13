@@ -13,11 +13,6 @@ body {
     width: auto;
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: blue;
-} */
 .hello {
     position: center;
     height: auto;
@@ -35,11 +30,15 @@ header {
 nav {
     background-color: #0E3FA8;
     color: white;
-    width: 150px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -47,11 +46,15 @@ nav a {
     font-size: 25px;
     color: #FFA902;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 nav a:hover {
     background-color: #FFA902;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
 }
 
 .search-container {
@@ -110,7 +113,8 @@ main {
 
 
 
-.result-box {
+.result-box,
+#history-container {
     background-color: white;
     padding: 20px;
     text-align: center;
@@ -120,4 +124,22 @@ main {
 
 .box {
     text-align: center;
+}
+
+#search-history-list {
+    padding: 10px;
+    text-align: center;
+}
+
+.search-history-button {
+    background-color: #FFA902;
+    color: white;
+    padding: 5px 10px;
+}
+
+h3 {
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bolder;
+    color: #1756dd;
 }
