@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blockbuster Beats!</title>
+    <title>Automatic Pop-up Modal</title>
+</style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- <link rel="stylesheet" href="styles.debug.css"> -->
     <!-- <script defer src="https://use.fontawesome.com/release/v5.07/js/all/js"></script> -->
@@ -12,6 +14,34 @@
 </head>
 
 <body>
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Grab your popcorn, grab your mic,</p>
+          <p>For Blockbuster Beats, we'll take flight.</p>
+          <p>So settle in, enjoy the show,</p>
+          <p>Blockbuster Beats, where music flows.</p>
+        </div>
+      
+      </div>
+      <script>
+        var modal = document.getElementById("myModal");
+
+        window.onload = function() {
+            modal.style.display = "block";
+        }
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
 </body>
 
 </html>
