@@ -107,3 +107,17 @@ main {
 .card-info p {
     margin-bottom: 0;
 }
+
+
+
+.result-box {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.box {
+    text-align: center;
+}

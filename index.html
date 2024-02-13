@@ -7,7 +7,7 @@
     <title>Blockbuster Beats!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- <link rel="stylesheet" href="styles.debug.css"> -->
-    <script defer src="https://use.fontawesome.com/release/v5.07/js/all/js"></script>
+    <!-- <script defer src="https://use.fontawesome.com/release/v5.07/js/all/js"></script> -->
 </head>
 
 <body>
@@ -38,6 +38,7 @@
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
+
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -56,6 +57,7 @@
             </div>
         </div>
     </section>
+
     <section class="section">
         <div class="container">
         </div>
@@ -64,14 +66,16 @@
                 <div class="column is-full"></div>
                 <label class="label">Search for your favorite film...</label>
                 <div class="control">
-                    <input class="input" type="Search for your favorite film..."
+                    <input id="search-bar" class="input" type="Search for your favorite film..."
                         placeholder="e.g. Titanic, Ghostbusters, Sonic the Hedgehog">
                 </div>
             </div>
             </div>
-            <button class="button is-link">Search Film</button>
+            <button id="search-button" class="button is-link">Search Film</button>
         </form>
     </section>
+
+    <div id="results-container"></div>
 
     <section>
         <div id="card-container">
